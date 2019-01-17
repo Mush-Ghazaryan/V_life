@@ -1,38 +1,42 @@
 package com.training;
+
 import java.util.*;
+
 public abstract class PersonCreator {
     private String personName;
-    //   private long personBirthday;
+
     private String personGender;
+    public double currentBalance = 0;
+
+    Scanner input = new Scanner(System.in);
 
 
-Scanner input = new Scanner(System.in);
-    enum Profession {PROGRAMMER, DOCTOR, AUTOMECHANIK}
     public PersonCreator() {
 
     }
+
     public PersonCreator(String name, String gender) {
         personName = name;
         personGender = gender;
+
     }
 
 
-    public String getPersonName() {
+    private String getPersonName() {
         personName = input.nextLine();
         System.out.println("Please, input your name: ");
         return personName;
     }
 
-    public void setPersonGender() {
 
-    }
 
-    public String getPersonGender() {
+    private String getPersonGender() {
         personGender = input.nextLine();
         System.out.println("Please, choose gender (male/female): ");
         return personGender;
     }
     public abstract void personEngagement();
+    public abstract void isBalanceNeeded();
 
 
 }
